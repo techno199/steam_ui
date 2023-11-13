@@ -17,7 +17,7 @@ const SidebarGameList = (props: SidebarGameListProps) => {
 
       <div className={'flex flex-col py-2'}>
         {GAMES_CONFIG.map(ci => (
-          <span className={clsx(
+          <span key={ci.name} className={clsx(
             'flex items-center gap-2 px-8 py-0.5 text-xs cursor-pointer', {
               ['hover:bg-steam-accent-5']: ci !== selectedGame,
               ['bg-steam-accent-6 hover:bg-steam-accent-7 text-steam-accent-2']: ci === selectedGame
