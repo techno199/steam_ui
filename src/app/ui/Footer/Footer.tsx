@@ -5,7 +5,7 @@ export type FooterProps = {}
 const Footer = (props: FooterProps) => {
   return (
     <div className={'p-4'}>
-      // TODO: Footer
+      TODO: Footer
     </div>
   );
 };
