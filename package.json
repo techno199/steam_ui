@@ -14,7 +14,8 @@
     "clsx": "^2.0.0",
     "next": "14.0.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "signals-react-safe": "^1.1.2"
   },
   "devDependencies": {
     "@types/node": "^20",

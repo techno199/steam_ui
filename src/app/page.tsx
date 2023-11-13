@@ -1,4 +1,4 @@
-import Image from 'next/image'
+'use client'
 import Navbar from "@/app/ui/Navbar/Navbar";
 import Sidebar from "@/app/ui/Sidebar/Sidebar";
 import Footer from "@/app/ui/Footer/Footer";

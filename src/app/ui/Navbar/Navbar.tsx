@@ -88,6 +88,6 @@ const Navbar = (props: NavbarProps) => {
 
 export default Navbar;
 
-const MenuItem = props => (
+const MenuItem = (props: any) => (
   <span className={'flex items-center gap-1 hover:text-steam-accent-2 duration-200 cursor-pointer'} {...props} />
 )

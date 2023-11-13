@@ -13,6 +13,7 @@ const ProfileButton = (props: ProfileButtonProps) => {
       <div className={'relative w-6 h-full border-r-2 border-steam-accent-4-300'}>
         <Image
           fill
+          alt={''}
           className={'object-cover'}
           src={'https://avatars.cloudflare.steamstatic.com/561494496009d61704673e6d1524f9393792b598_full.jpg'}
         />

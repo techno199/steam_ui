@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import SidebarGameListSearch from "@/app/ui/Sidebar/SidebarGameListSearch";
-import {GAMES_CONFIG} from "games.config";
+import {GAMES_CONFIG} from "../../../../games.config";
 import Image from "next/image";
 import {LibrarySignal} from "@/app/signal";
 import clsx from "clsx";
@@ -24,7 +24,7 @@ const SidebarGameList = (props: SidebarGameListProps) => {
             }
           )}>
             <div className={'relative w-5 h-5'}>
-              <Image src={ci.logoUrl} fill />
+              <Image alt={''} src={ci.logoUrl} fill />
             </div>
 
             {ci.name}

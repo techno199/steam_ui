@@ -3,7 +3,7 @@ import React, {HTMLAttributes} from 'react';
 import clsx from "clsx";
 
 export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-  color: 'transparent' | 'secondary' | 'accent-1' | 'accent-3' | 'accent-4' | 'accent-8';
+  color?: 'transparent' | 'secondary' | 'accent-1' | 'accent-3' | 'accent-4' | 'accent-8';
 }
 
 const Button = (props: ButtonProps) => {
