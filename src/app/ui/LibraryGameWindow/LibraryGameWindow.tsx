@@ -1,8 +1,8 @@
 'use client'
 import React from 'react';
-import {GameLibraryStore, LibrarySignal} from "@/app/signal";
 import LibraryGameWindowLauncher from "@/app/ui/LibraryGameWindow/LibraryGameWindowLauncher";
 import {observer} from "mobx-react";
+import {GameLibraryStore} from "src/app/store";
 
 export type LibraryGameWindowProps = {}
 

@@ -3,7 +3,7 @@ import React from 'react';
 import SidebarGameListSearch from "@/app/ui/Sidebar/SidebarGameListSearch";
 import {GAMES_CONFIG, GamesConfigItem} from "../../../../games.config";
 import Image from "next/image";
-import {GameLibraryStore, LibrarySignal} from "@/app/signal";
+import {GameLibraryStore} from "@/app/store";
 import clsx from "clsx";
 import {observer} from 'mobx-react';
 

@@ -4,18 +4,16 @@ import {makeObservable, observable} from "mobx";
 
 class GameLibrary {
   selectedGame: GamesConfigItem;
+  launchedGame: GamesConfigItem;
 
   constructor() {
     this.selectedGame = GAMES_CONFIG[0];
+    this.launchedGame = null;
     makeObservable(this, {
-      selectedGame: observable
+      selectedGame: observable,
+      launchedGame: observable
     });
   }
 }
 
 export const GameLibraryStore = new GameLibrary();
-
-export const LibrarySignal = signal({
-  selectedGame: GAMES_CONFIG[0],
-  search: ''
-});

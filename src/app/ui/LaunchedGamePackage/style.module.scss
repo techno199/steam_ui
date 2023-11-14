@@ -1,0 +1,36 @@
+@keyframes load1 {
+  0%, 24%, 35%, 100% {
+    background: black;
+  }
+  25%, 34% {
+    background: transparent;
+  }
+}
+
+@keyframes load2 {
+  0%, 10%, 20%, 60%, 65%, 100% {
+    background: black;
+  }
+  11%, 19%, 61%, 64% {
+    background: transparent;
+  }
+}
+
+@keyframes load3 {
+  0%, 100% {
+    background: black;
+  }
+}
+
+.load1 {
+  animation: 6s load1 infinite;
+}
+
+.load2 {
+  animation: 6s load2 infinite;
+}
+
+.load3 {
+  animation: 2s load3 infinite;
+}
+
