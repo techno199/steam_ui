@@ -1,12 +1,13 @@
 'use client'
 import React from 'react';
-import {LibrarySignal} from "@/app/signal";
+import {GameLibraryStore, LibrarySignal} from "@/app/signal";
 import LibraryGameWindowLauncher from "@/app/ui/LibraryGameWindow/LibraryGameWindowLauncher";
+import {observer} from "mobx-react";
 
 export type LibraryGameWindowProps = {}
 
-const LibraryGameWindow = (props: LibraryGameWindowProps) => {
-  const selectedGame = LibrarySignal.value;
+const LibraryGameWindow = observer((props: LibraryGameWindowProps) => {
+  const {selectedGame} = GameLibraryStore;
 
   return (
     <div
@@ -18,6 +19,6 @@ const LibraryGameWindow = (props: LibraryGameWindowProps) => {
       <LibraryGameWindowLauncher />
     </div>
   );
-};
+});
 
 export default LibraryGameWindow;

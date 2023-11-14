@@ -1,4 +1,4 @@
-type GamesConfigItem = {
+export type GamesConfigItem = {
   name: string;
   logoUrl: string;
   backgroundUrl: string;
@@ -8,10 +8,17 @@ type GamesConfigItem = {
 
 export const GAMES_CONFIG: GamesConfigItem[] = [
   {
-    name: 'Call of Duty®',
+    name: 'Call of Duty: Modern Warfare II® (2022)',
     logoUrl: '/steam/games/cod_logo.png',
     backgroundUrl: '/steam/games/cod_bg.jpg',
     isFavorite: true,
     gameUrl: 'https://techno199.github.io/modern_warfare2019/'
+  },
+  {
+    name: 'Battlefield V',
+    logoUrl: '/steam/games/bf_logo.jpg',
+    backgroundUrl: '/steam/games/bf_bg.jpg',
+    isFavorite: true,
+    gameUrl: 'https://techno199.github.io/bfv_markup/'
   }
 ]
