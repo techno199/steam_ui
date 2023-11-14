@@ -21,7 +21,6 @@ const LaunchedGamePackage = observer((props: LaunchedGamePackageProps) => {
     if (launchedGame) {
       const styles = [classes.load1, classes.load2, classes.load3]
       const random = Math.floor(Math.random() * styles.length);
-      console.log(random)
 
       setState(p => ({...p, loadAnimationStyle: styles[random]}));
       setTimeout(() => {
@@ -33,7 +32,15 @@ const LaunchedGamePackage = observer((props: LaunchedGamePackageProps) => {
   return (
     <>
       {launchedGame && (
-        <div className={clsx('fixed inset-0 z-10', loadAnimationStyle)}>
+        <div
+          className={clsx(
+            'fixed inset-0 z-10',
+            loadAnimationStyle,
+            {
+              ['cursor-progress']: launchedGame && !gameLoaded
+            }
+          )}
+        >
           {gameLoaded && (
             <iframe
               src={launchedGame.gameUrl}
