@@ -27,7 +27,7 @@ const SidebarGameList = observer((props: SidebarGameListProps) => {
             className={clsx(
               'flex items-center gap-2 px-8 py-0.5 text-xs cursor-pointer whitespace-nowrap', {
                 ['hover:bg-steam-accent-5']: ci !== selectedGame,
-                ['bg-steam-accent-6 hover:bg-steam-accent-7 text-steam-accent-2']: ci.name === selectedGame.name
+                ['bg-steam-accent-6 hover:bg-steam-accent-7 text-steam-accent-2']: ci.name === selectedGame?.name
               }
             )}
             onClick={handleGameClick(ci)}

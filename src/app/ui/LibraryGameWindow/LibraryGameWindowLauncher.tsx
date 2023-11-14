@@ -5,7 +5,6 @@ import {observer} from "mobx-react";
 import {AnimatePresence, motion} from "framer-motion";
 import {GameLibraryStore} from "@/app/store";
 import Play from '/public/steam/play.svg';
-import {GamesConfigItem} from "games.config";
 
 export type LibraryGameWindowLauncherProps = {}
 
@@ -21,7 +20,7 @@ const LibraryGameWindowLauncher = observer((props: LibraryGameWindowLauncherProp
         <div className={'flex flex-col grow p-4 backdrop-blur bg-steam-primary/50'}>
           <AnimatePresence mode={'popLayout'}>
             <motion.div
-              key={selectedGame.name}
+              key={selectedGame?.name}
               initial={{y: 20, opacity: 0, }}
               animate={{y: 0, opacity: 1}}
               exit={{y: -5, opacity: 0}}

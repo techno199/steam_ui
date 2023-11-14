@@ -4,8 +4,6 @@ import Sidebar from "@/app/ui/Sidebar/Sidebar";
 import Footer from "@/app/ui/Footer/Footer";
 import LibraryGameWindow from "@/app/ui/LibraryGameWindow/LibraryGameWindow";
 import React from "react";
-import {GameLibraryStore} from "src/app/store";
-import {observable} from "mobx";
 import {observer} from "mobx-react";
 import LaunchedGamePackage from "@/app/ui/LaunchedGamePackage/LaunchedGamePackage";
 

@@ -3,12 +3,13 @@ import {GAMES_CONFIG, GamesConfigItem} from "../../games.config";
 import {makeObservable, observable} from "mobx";
 
 class GameLibrary {
-  selectedGame: GamesConfigItem;
-  launchedGame: GamesConfigItem;
+  selectedGame: GamesConfigItem | null;
+  launchedGame: GamesConfigItem | null;
 
   constructor() {
     this.selectedGame = GAMES_CONFIG[0];
     this.launchedGame = null;
+
     makeObservable(this, {
       selectedGame: observable,
       launchedGame: observable
