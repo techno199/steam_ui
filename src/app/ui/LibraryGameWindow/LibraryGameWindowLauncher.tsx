@@ -24,7 +24,7 @@ const LibraryGameWindowLauncher = observer((props: LibraryGameWindowLauncherProp
               {/* 1st ROW */}
               <div className={'flex gap-4'}>
                 <a href={selectedGame.gameUrl} target={'_blank'}>
-                  <Button color={'accent-8'} className={'px-14 py-2.5 !text-lg font-medium'}>
+                  <Button color={'accent-8'} className={'!px-14 py-2.5 !text-lg font-medium'}>
                     PLAY
                   </Button>
                 </a>
