@@ -5,6 +5,8 @@ import {GameLibraryStore} from "@/app/store";
 import clsx from "clsx";
 import {observer} from "mobx-react";
 
+const LOAD_ANIMATIONS = [classes.load1, classes.load2, classes.load3, classes.load4]
+
 export type LaunchedGamePackageProps = {}
 
 const LaunchedGamePackage = observer((props: LaunchedGamePackageProps) => {
@@ -12,20 +14,20 @@ const LaunchedGamePackage = observer((props: LaunchedGamePackageProps) => {
 
   const [state, setState] = useState({
     gameLoaded: false,
-    loadAnimationStyle: ''
+    // Selected animation
+    loadAnimationStyle: '',
   });
 
   const {gameLoaded, loadAnimationStyle} = state;
 
   useEffect(() => {
-    const styles = [classes.load1, classes.load2, classes.load3]
-    const random = Math.floor(Math.random() * styles.length);
+    const random = Math.floor(Math.random() * LOAD_ANIMATIONS.length);
 
-    setState(p => ({...p, loadAnimationStyle: styles[random]}));
+    setState(p => ({...p, loadAnimationStyle: LOAD_ANIMATIONS[random]}));
     setTimeout(() => {
       setState(p => ({...p, gameLoaded: true}));
     }, 4000);
-  }, [])
+  }, []);
 
   return (
       <div

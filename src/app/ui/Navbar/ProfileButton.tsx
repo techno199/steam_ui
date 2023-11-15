@@ -24,7 +24,7 @@ const ProfileButton = (props: ProfileButtonProps) => {
       </span>
 
       <span className={'pr-2 text-steam-accent-1'}>
-        24 017,95₽
+        over9000₽
       </span>
     </Button>
   );

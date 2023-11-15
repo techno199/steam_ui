@@ -27,7 +27,6 @@ const SidebarGameList = observer((props: SidebarGameListProps) => {
     GameLibraryStore.selectedGame = game;
   }
 
-  console.log(formik.values)
   return (
     <div className={'bg-steam-secondary-300 grow'}>
       <SidebarGameListSearch formik={formik} />
