@@ -1,6 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Navbar from "@/app/ui/Navbar/Navbar";
+import React from "react";
+import Footer from "@/app/ui/Footer/Footer";
+import Window from "@/ui/Window/Window";
+import LaunchedGamePackage from "@/app/library/ui/LaunchedGamePackage/LaunchedGamePackage";
+import {GameLibraryStore} from "@/app/store";
+import LaunchedGameWindow from "@/app/ui/LaunchedGameWindow/LaunchedGameWindow";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,9 +21,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className='flex flex-col min-h-screen bg-steam-primary text-steam-accent-1'>
+          <Navbar />
+          <div className={'relative flex flex-col grow overflow-auto'}>
+            {children}
+          </div>
+          <Footer />
+        </main>
+
+        <LaunchedGameWindow />
+      </body>
     </html>
   )
 }

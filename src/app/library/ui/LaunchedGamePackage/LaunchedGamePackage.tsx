@@ -1,5 +1,5 @@
 'use client'
-import classes from './style.module.scss'
+import classes from 'src/app/library/ui/LaunchedGamePackage/style.module.scss'
 import React, {useEffect, useState} from 'react';
 import {GameLibraryStore} from "@/app/store";
 import clsx from "clsx";

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import LibraryGameWindowLauncher from "@/app/ui/LibraryGameWindow/LibraryGameWindowLauncher";
+import LibraryGameWindowLauncher from "@/app/library/ui/LibraryGameWindow/LibraryGameWindowLauncher";
 import {observer} from "mobx-react";
 import {GameLibraryStore} from "@/app/store";
 

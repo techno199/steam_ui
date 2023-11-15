@@ -1,35 +1,14 @@
 'use client'
-import Navbar from "@/app/ui/Navbar/Navbar";
-import Sidebar from "@/app/ui/Sidebar/Sidebar";
-import Footer from "@/app/ui/Footer/Footer";
-import LibraryGameWindow from "@/app/ui/LibraryGameWindow/LibraryGameWindow";
 import React from "react";
 import {observer} from "mobx-react";
-import LaunchedGamePackage from "@/app/ui/LaunchedGamePackage/LaunchedGamePackage";
-import {GameLibraryStore} from "@/app/store";
-import Window from "@/ui/Window/Window";
+import {redirect} from "next/navigation";
 
 export default observer(() => {
-  const {launchedGame} = GameLibraryStore;
-
-  const handleCloseGame = () => {
-    GameLibraryStore.launchedGame = null;
-  }
+  redirect('/library');
 
   return (
-    <main className='flex min-h-screen flex-col bg-steam-primary text-steam-accent-1'>
-      <Navbar />
-      <div className={'flex grow'}>
-        <Sidebar />
-        <LibraryGameWindow />
-      </div>
-      <Footer />
+    <div>
 
-      {launchedGame && (
-        <Window onClose={handleCloseGame}>
-          <LaunchedGamePackage />
-        </Window>
-      )}
-    </main>
+    </div>
   )
 })

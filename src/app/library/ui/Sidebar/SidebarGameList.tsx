@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
-import SidebarGameListSearch from "@/app/ui/Sidebar/SidebarGameListSearch";
-import {GAMES_CONFIG, GamesConfigItem} from "../../../../games.config";
+import SidebarGameListSearch from "@/app/library/ui/Sidebar/SidebarGameListSearch";
+import {GAMES_CONFIG, GamesConfigItem} from "games.config";
 import Image from "next/image";
 import {GameLibraryStore} from "@/app/store";
 import clsx from "clsx";

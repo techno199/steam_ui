@@ -1,6 +1,6 @@
 import React from 'react';
-import SidebarGameList from "@/app/ui/Sidebar/SidebarGameList";
-import SidebarActions from "@/app/ui/Sidebar/SidebarActions";
+import SidebarGameList from "@/app/library/ui/Sidebar/SidebarGameList";
+import SidebarActions from "@/app/library/ui/Sidebar/SidebarActions";
 
 export type SidebarProps = {}
 

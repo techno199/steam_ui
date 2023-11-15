@@ -17,12 +17,12 @@ const Window = observer((props: WindowProps) => {
     <div
       className={clsx(
         className,
-        'absolute inset-0 flex flex-col z-50 bg-steam-secondary',
+        'absolute inset-0 flex flex-col z-50 bg-steam-secondary text-steam-accent-2',
       )}
       {...rest}
     >
       <div className={'flex justify-between bg-steam-primary'}>
-        <h1 className={'p-2 text-xs text-steam-accent-2'}>{selectedGame?.name}</h1>
+        <h1 className={'p-2 text-xs'}>{selectedGame?.name}</h1>
 
         <div className={'flex'}>
           <Button onClick={onClose}>

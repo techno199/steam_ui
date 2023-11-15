@@ -10,10 +10,14 @@ import Minimize from '/public/steam/minimize_window.svg';
 import Maximize from '/public/steam/maximize_window.svg';
 import Close from '/public/steam/close_window.svg';
 import ArrowUp from '/public/steam/arrow_up.svg';
+import {usePathname} from "next/navigation";
+import Link from "next/link";
+import clsx from "clsx";
 
 export type NavbarProps = {}
 
 const Navbar = (props: NavbarProps) => {
+
   return (
     <div>
       {/* 1st ROW */}
@@ -68,18 +72,20 @@ const Navbar = (props: NavbarProps) => {
         </div>
 
         <div className={'flex gap-[18px]'}>
-          <span className={'text-lg text-steam-accent-2 uppercase font-bold'}>
+          <NavLink
+            href={'/store'}
+          >
             Store
-          </span>
-          <span className={'text-lg text-steam-accent-4 underline underline-offset-8 decoration-4 uppercase font-bold'}>
+          </NavLink>
+          <NavLink href={'/library'}>
             Library
-          </span>
-          <span className={'text-lg text-steam-accent-2 uppercase font-bold'}>
+          </NavLink>
+          <NavLink href={'/community'}>
             Community
-          </span>
-          <span className={'text-lg text-steam-accent-2 uppercase font-bold'}>
+          </NavLink>
+          <NavLink href={'/profile'}>
             Dark Vjurge
-          </span>
+          </NavLink>
         </div>
       </div>
     </div>
@@ -91,3 +97,20 @@ export default Navbar;
 const MenuItem = (props: any) => (
   <span className={'flex items-center gap-1 hover:text-steam-accent-2 duration-200 cursor-pointer'} {...props} />
 )
+
+const NavLink = ({children, href}) => {
+  const pathname = usePathname();
+
+  return (
+    <Link
+      href={href}
+      className={clsx(
+        'text-lg text-steam-accent-2 uppercase font-bold', {
+          ['underline underline-offset-8 decoration-4 !text-steam-accent-4']: pathname === href
+        }
+      )}
+    >
+      {children}
+    </Link>
+  )
+}
