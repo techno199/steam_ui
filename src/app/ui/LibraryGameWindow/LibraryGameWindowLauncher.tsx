@@ -21,10 +21,9 @@ const LibraryGameWindowLauncher = observer((props: LibraryGameWindowLauncherProp
           <AnimatePresence mode={'popLayout'}>
             <motion.div
               key={selectedGame?.name}
-              initial={{y: 20, opacity: 0, }}
+              initial={{y: 10, opacity: 0, }}
               animate={{y: 0, opacity: 1}}
-              exit={{y: -5, opacity: 0}}
-              transition={{type: 'just'}}
+              transition={{type: 'tween', duration: .4}}
             >
               {/* 1st ROW */}
               <div className={'flex gap-4'}>

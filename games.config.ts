@@ -8,7 +8,7 @@ export type GamesConfigItem = {
 
 export const GAMES_CONFIG: GamesConfigItem[] = [
   {
-    name: 'Call of Duty: Modern Warfare II® (2022)',
+    name: 'Call of Duty: Modern Warfare® (2019)',
     logoUrl: '/steam/games/cod_logo.png',
     backgroundUrl: '/steam/games/cod_bg.jpg',
     isFavorite: true,
