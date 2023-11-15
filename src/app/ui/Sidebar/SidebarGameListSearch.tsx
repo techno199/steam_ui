@@ -13,7 +13,7 @@ const SidebarGameListSearch = (props: SidebarGameListSearchProps) => {
   return (
     <div className={'flex flex-col p-2'}>
       <TextField
-        name={''}
+        name={'search'}
         value={formik.values.search}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
