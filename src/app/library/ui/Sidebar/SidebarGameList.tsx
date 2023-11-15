@@ -1,13 +1,12 @@
 'use client'
 import React from 'react';
 import SidebarGameListSearch from "@/app/library/ui/Sidebar/SidebarGameListSearch";
-import {GAMES_CONFIG, GamesConfigItem} from "games.config";
 import Image from "next/image";
 import {GameLibraryStore} from "@/app/store";
 import clsx from "clsx";
 import {observer} from 'mobx-react';
 import {useFormik} from "formik";
-import {object} from "zod";
+import {GAMES_CONFIG, GamesConfigItem} from "@/../games.config";
 
 export type SidebarGameListProps = {}
 
@@ -29,7 +28,7 @@ const SidebarGameList = observer((props: SidebarGameListProps) => {
 
   return (
     <div className={'bg-steam-secondary-300 grow'}>
-      <SidebarGameListSearch formik={formik} />
+      <SidebarGameListSearch formik={formik}/>
 
       <div className={'flex flex-col py-2'}>
         {GAMES_CONFIG.filter(ci => ci.name.toLowerCase().includes(formik.values.search.toLowerCase())).map(ci => (
