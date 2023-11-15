@@ -4,7 +4,6 @@ import React, {useEffect, useState} from 'react';
 import {GameLibraryStore} from "@/app/store";
 import clsx from "clsx";
 import {observer} from "mobx-react";
-import Window from "src/ui/Window/Window";
 
 export type LaunchedGamePackageProps = {}
 
@@ -40,7 +39,7 @@ const LaunchedGamePackage = observer((props: LaunchedGamePackageProps) => {
       >
         {gameLoaded && (
           <iframe
-            src={launchedGame.gameUrl}
+            src={launchedGame?.gameUrl}
             width={'100%'}
             height={'100%'}
           />

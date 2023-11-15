@@ -6,8 +6,8 @@ import LibraryGameWindow from "@/app/ui/LibraryGameWindow/LibraryGameWindow";
 import React from "react";
 import {observer} from "mobx-react";
 import LaunchedGamePackage from "@/app/ui/LaunchedGamePackage/LaunchedGamePackage";
-import Window from "src/ui/Window/Window";
-import {GameLibraryStore} from "src/app/store";
+import {GameLibraryStore} from "@/app/store";
+import Window from "@/ui/Window/Window";
 
 export default observer(() => {
   const {launchedGame} = GameLibraryStore;

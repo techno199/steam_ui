@@ -1,7 +1,7 @@
 import React, {HTMLAttributes, ReactNode} from 'react';
 import clsx from "clsx";
 
-export type TextFieldProps = HTMLAttributes<HTMLInputElement> & {
+export type TextFieldProps =  React.InputHTMLAttributes<HTMLInputElement> & {
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
   inputProps?: HTMLAttributes<HTMLInputElement>;
