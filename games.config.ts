@@ -23,5 +23,13 @@ export const GAMES_CONFIG: GamesConfigItem[] = [
     isFavorite: true,
     gameUrl: 'https://techno199.github.io/bfv_markup/',
     playTime: 225.4
+  },
+  {
+    name: 'Dota 2 Test Server',
+    logoUrl: '/steam/games/dota_logo.jfif',
+    backgroundUrl: '/steam/games/dota_bg.png',
+    isFavorite: true,
+    gameUrl: 'https://dota-ui.vercel.app/',
+    playTime: 12289
   }
 ]
