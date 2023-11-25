@@ -3,17 +3,17 @@ import React, {useState} from 'react';
 import Button from "@/ui/Button/Button";
 import {observer} from "mobx-react";
 import {AnimatePresence, motion} from "framer-motion";
-import {GameLibraryStore} from "@/app/store";
+import {gameLibraryStore} from "@/app/store";
 import Play from '/public/steam/play.svg';
 import TimePlayed from '/public/steam/time_played.svg';
 
 export type LibraryGameWindowLauncherProps = {}
 
 const LibraryGameWindowLauncher = observer((props: LibraryGameWindowLauncherProps) => {
-  const {selectedGame} = GameLibraryStore;
+  const {selectedGame} = gameLibraryStore;
 
   const handleLaunch = () => {
-    GameLibraryStore.launchedGame = selectedGame;
+    gameLibraryStore.launchedGame = selectedGame;
   }
 
   return (

@@ -1,7 +1,7 @@
 import React, {HTMLAttributes, PropsWithChildren} from 'react';
 import clsx from "clsx";
 import Button from "@/ui/Button/Button";
-import {GameLibraryStore} from "@/app/store";
+import {gameLibraryStore} from "@/app/store";
 import {observer} from "mobx-react";
 import Close from '/public/steam/close_window.svg';
 
@@ -11,7 +11,7 @@ export type WindowProps = HTMLAttributes<HTMLDivElement> & {
 
 const Window = observer((props: WindowProps) => {
   const { children, className, onClose, ...rest } = props;
-  const {selectedGame} = GameLibraryStore;
+  const {selectedGame} = gameLibraryStore;
 
   return (
     <div

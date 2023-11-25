@@ -2,7 +2,7 @@
 import React from 'react';
 import SidebarGameListSearch from "@/app/library/ui/Sidebar/SidebarGameListSearch";
 import Image from "next/image";
-import {GameLibraryStore} from "@/app/store";
+import {gameLibraryStore} from "@/app/store";
 import clsx from "clsx";
 import {observer} from 'mobx-react';
 import {useFormik} from "formik";
@@ -11,7 +11,7 @@ import {GAMES_CONFIG, GamesConfigItem} from "@/../games.config";
 export type SidebarGameListProps = {}
 
 const SidebarGameList = observer((props: SidebarGameListProps) => {
-  const {selectedGame} = GameLibraryStore;
+  const {selectedGame} = gameLibraryStore;
 
   const formik = useFormik({
     initialValues: {
@@ -23,7 +23,7 @@ const SidebarGameList = observer((props: SidebarGameListProps) => {
   })
 
   const handleGameClick = (game: GamesConfigItem) => () => {
-    GameLibraryStore.selectedGame = game;
+    gameLibraryStore.selectedGame = game;
   }
 
   return (

@@ -6,7 +6,7 @@ import LibraryGameWindow from "@/app/library/ui/LibraryGameWindow/LibraryGameWin
 import Footer from "@/app/ui/Footer/Footer";
 import Window from "@/ui/Window/Window";
 import LaunchedGamePackage from "@/app/library/ui/LaunchedGamePackage/LaunchedGamePackage";
-import {GameLibraryStore} from "@/app/store";
+import {gameLibraryStore} from "@/app/store";
 import {observer} from "mobx-react";
 
 export type PageProps = {}

@@ -1,15 +1,20 @@
 import {signal} from "signals-react-safe";
 import {GAMES_CONFIG, GamesConfigItem} from "../../games.config";
-import {makeObservable, observable} from "mobx";
+import {makeAutoObservable, makeObservable, observable} from "mobx";
 
-class GameLibrary {
-  selectedGame: GamesConfigItem | null;
-  launchedGame: GamesConfigItem | null;
+class SteamStore {
+  loggedIn = false;
 
   constructor() {
-    this.selectedGame = GAMES_CONFIG[0];
-    this.launchedGame = null;
+    makeAutoObservable(this);
+  }
+}
 
+class GameLibraryStore {
+  selectedGame? = GAMES_CONFIG[0];
+  launchedGame?: GamesConfigItem = null;
+
+  constructor() {
     makeObservable(this, {
       selectedGame: observable,
       launchedGame: observable
@@ -17,4 +22,5 @@ class GameLibrary {
   }
 }
 
-export const GameLibraryStore = new GameLibrary();
+export const gameLibraryStore = new GameLibraryStore();
+export const steamStore = new SteamStore();

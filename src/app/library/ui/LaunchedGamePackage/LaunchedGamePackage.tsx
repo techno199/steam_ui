@@ -1,7 +1,7 @@
 'use client'
 import classes from 'src/app/library/ui/LaunchedGamePackage/style.module.scss'
 import React, {useEffect, useState} from 'react';
-import {GameLibraryStore} from "@/app/store";
+import {gameLibraryStore} from "@/app/store";
 import clsx from "clsx";
 import {observer} from "mobx-react";
 
@@ -10,7 +10,7 @@ const LOAD_ANIMATIONS = [classes.load1, classes.load2, classes.load3, classes.lo
 export type LaunchedGamePackageProps = {}
 
 const LaunchedGamePackage = observer((props: LaunchedGamePackageProps) => {
-  const {launchedGame} = GameLibraryStore;
+  const {launchedGame} = gameLibraryStore;
 
   const [state, setState] = useState({
     gameLoaded: false,
