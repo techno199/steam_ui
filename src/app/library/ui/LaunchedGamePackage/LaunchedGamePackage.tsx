@@ -10,7 +10,7 @@ const LOAD_ANIMATIONS = [classes.load1, classes.load2, classes.load3, classes.lo
 export type LaunchedGamePackageProps = {}
 
 const LaunchedGamePackage = observer((props: LaunchedGamePackageProps) => {
-  const {launchedGame} = gameLibraryStore;
+  const {launchedApp} = gameLibraryStore;
 
   const [state, setState] = useState({
     gameLoaded: false,
@@ -41,7 +41,7 @@ const LaunchedGamePackage = observer((props: LaunchedGamePackageProps) => {
       >
         {gameLoaded && (
           <iframe
-            src={launchedGame?.gameUrl}
+            src={launchedApp?.gameUrl}
             width={'100%'}
             height={'100%'}
           />

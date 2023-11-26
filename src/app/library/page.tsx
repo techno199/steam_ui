@@ -15,7 +15,9 @@ const Page = observer((props: PageProps) => {
   return (
     <div className={'flex grow'}>
       <Sidebar />
-      <LibraryGameWindow />
+      <div className={'flex flex-col grow border-l border-l-[rgb(23_25_27)] border-t border-t-steam-secondary'}>
+        <LibraryGameWindow />
+      </div>
     </div>
   );
 });

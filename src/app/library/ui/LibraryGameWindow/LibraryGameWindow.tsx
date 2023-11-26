@@ -1,24 +1,29 @@
 'use client'
 import React from 'react';
 import LibraryGameWindowLauncher from "@/app/library/ui/LibraryGameWindow/LibraryGameWindowLauncher";
+import {gameLibraryStore, steamStore} from "@/app/store";
+import {AppCategory, LibraryApp} from "@/../games.config";
 import {observer} from "mobx-react";
-import {gameLibraryStore} from "@/app/store";
+import LibraryCategoryWindow from "@/app/library/ui/LibraryGameWindow/LibraryCategoryWindow";
 
 export type LibraryGameWindowProps = {}
 
 const LibraryGameWindow = observer((props: LibraryGameWindowProps) => {
-  const {selectedGame} = gameLibraryStore;
+  const {selectedApp} = gameLibraryStore;
 
-  return (
-    <div
-      className={'flex flex-col grow bg-top bg-cover'}
-      style={{
-        backgroundImage: `url('${selectedGame?.backgroundUrl}')`
-      }}
-    >
+  if (!selectedApp) {
+    return 'No selected app available.';
+  }
+
+  if ((selectedApp as AppCategory)?.isCategory) {
+    return (
+      <LibraryCategoryWindow />
+    )
+  } else {
+    return (
       <LibraryGameWindowLauncher />
-    </div>
-  );
+    );
+  }
 });
 
 export default LibraryGameWindow;

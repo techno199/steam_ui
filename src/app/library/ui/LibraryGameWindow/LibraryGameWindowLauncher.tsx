@@ -6,28 +6,41 @@ import {AnimatePresence, motion} from "framer-motion";
 import {gameLibraryStore} from "@/app/store";
 import Play from '/public/steam/play.svg';
 import TimePlayed from '/public/steam/time_played.svg';
+import {LibraryApp} from "@/../games.config";
+import clsx from "clsx";
 
 export type LibraryGameWindowLauncherProps = {}
 
 const LibraryGameWindowLauncher = observer((props: LibraryGameWindowLauncherProps) => {
-  const {selectedGame} = gameLibraryStore;
+  const selectedApp = gameLibraryStore.selectedApp as LibraryApp;
 
   const handleLaunch = () => {
-    gameLibraryStore.launchedGame = selectedGame;
+    gameLibraryStore.launchedApp = selectedApp;
   }
 
   return (
-      <div className={'flex flex-col px-0.5 grow pt-[250px]'}>
-        <div className={'flex flex-col grow p-4 backdrop-blur bg-steam-primary/50'}>
+    <div
+      className={'flex flex-col grow bg-top bg-cover'}
+      style={{
+        backgroundImage: `url('${selectedApp?.backgroundUrl}')`
+      }}
+    >
+      <div className={'flex flex-col grow pt-[250px]'}>
+        <div className={clsx(
+          'flex flex-col grow p-4 backdrop-blur bg-steam-primary/50 text-steam-accent-2/80 text-sm',
+          'bg-gradient-to-b from-transparent via-steam-secondary/90 to-steam-secondary'
+        )}>
           <AnimatePresence mode={'popLayout'}>
             <motion.div
-              key={selectedGame?.name}
-              initial={{y: 10, opacity: 0, }}
-              animate={{y: 0, opacity: 1}}
+              key={selectedApp?.name}
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              exit={{opacity: 0}}
               transition={{type: 'tween', duration: .4}}
+              className={'flex flex-col gap-4'}
             >
               {/* 1st ROW */}
-              <div className={'flex items-center gap-8 text-steam-accent-2/80'}>
+              <div className={'flex items-center gap-8'}>
                 <Button
                   color={'accent-8'}
                   className={'gap-2 !px-14 py-2.5 !text-lg font-medium'}
@@ -48,14 +61,19 @@ const LibraryGameWindowLauncher = observer((props: LibraryGameWindowLauncherProp
                   <TimePlayed className={'!w-6 !h-auto'} />
                   <div className={'flex flex-col leading-tight'}>
                     <span className={'text-sm uppercase'}>Play time</span>
-                    <span className={'text-[13px]'}>{selectedGame?.playTime} hours</span>
+                    <span className={'text-[13px]'}>{selectedApp?.playTime} hours</span>
                   </div>
                 </div>
+              </div>
+
+              <div className={'whitespace-pre'}>
+                {selectedApp?.description}
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
       </div>
+    </div>
   );
 });
 

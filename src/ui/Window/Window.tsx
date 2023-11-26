@@ -11,7 +11,7 @@ export type WindowProps = HTMLAttributes<HTMLDivElement> & {
 
 const Window = observer((props: WindowProps) => {
   const { children, className, onClose, ...rest } = props;
-  const {selectedGame} = gameLibraryStore;
+  const {selectedApp} = gameLibraryStore;
 
   return (
     <div
@@ -22,7 +22,7 @@ const Window = observer((props: WindowProps) => {
       {...rest}
     >
       <div className={'flex justify-between bg-steam-primary'}>
-        <h1 className={'p-2 text-xs'}>{selectedGame?.name}</h1>
+        <h1 className={'p-2 text-xs'}>{selectedApp?.name}</h1>
 
         <div className={'flex'}>
           <Button onClick={onClose}>

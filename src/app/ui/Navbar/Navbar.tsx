@@ -17,6 +17,10 @@ import clsx from "clsx";
 export type NavbarProps = {}
 
 const Navbar = (props: NavbarProps) => {
+  const handleClose = () => {
+    window?.localStorage?.removeItem('authorized');
+    location.href = '/'
+  }
 
   return (
     <div>
@@ -58,7 +62,7 @@ const Navbar = (props: NavbarProps) => {
           <Button className={'!px-2 !pt-3'}>
             <Maximize />
           </Button>
-          <Button className={'!px-2 !pt-3'}>
+          <Button className={'!px-2 !pt-3'} onClick={handleClose}>
             <Close className={'!w-[.7em] !h-[0.7em]'} />
           </Button>
         </div>

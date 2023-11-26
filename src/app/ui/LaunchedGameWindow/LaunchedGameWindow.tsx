@@ -8,15 +8,15 @@ import {observer} from "mobx-react";
 export type LaunchedGameWindowProps = {}
 
 const LaunchedGameWindow = observer((props: LaunchedGameWindowProps) => {
-  const {launchedGame} = gameLibraryStore;
+  const {launchedApp} = gameLibraryStore;
 
   const handleCloseGame = () => {
-    gameLibraryStore.launchedGame = null;
+    gameLibraryStore.launchedApp = null;
   }
 
   return (
     <>
-      {launchedGame && (
+      {launchedApp && (
         <Window onClose={handleCloseGame}>
           <LaunchedGamePackage />
         </Window>

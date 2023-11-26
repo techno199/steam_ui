@@ -1,5 +1,5 @@
 'use client'
-import React, {ReactNode, useEffect} from 'react';
+import React, {ReactNode, useEffect, useState} from 'react';
 import Navbar from "@/app/ui/Navbar/Navbar";
 import Footer from "@/app/ui/Footer/Footer";
 import {observer} from "mobx-react";
@@ -13,11 +13,24 @@ export type LayoutNavbarProps = {
 }
 
 const LayoutWrap = observer(({children}: LayoutNavbarProps) => {
+  const [state, setState] = useState({
+    text: 'Logging in...'
+  });
+
+  const {text} = state;
+
   useEffect(() => {
     setTimeout(() => {
+      setState(p => ({...p, text: `It's a nice day today!`}));
+    }, 5500);
+    setTimeout(() => {
+      setState(p => ({...p, text: 'Hi mom!'}));
+    }, 10000);
+    setTimeout(() => {
       steamStore.loggedIn = true;
+      window?.localStorage?.setItem('authorized', '1');
       redirect('/library')
-    }, 2200)
+    }, 14500)
   }, [])
 
   return (
@@ -47,7 +60,7 @@ const LayoutWrap = observer(({children}: LayoutNavbarProps) => {
                   <SteamLogo className={'w-[6rem] h-auto'} />
                 </div>
 
-                <span>Logging in...</span>
+                <span>{text}</span>
 
                 <div className={'flex items-center gap-2 pt-10'}>
                   <img className={'h-8'} src={'https://avatars.cloudflare.steamstatic.com/561494496009d61704673e6d1524f9393792b598_full.jpg'} />
@@ -75,7 +88,7 @@ const LayoutWrap = observer(({children}: LayoutNavbarProps) => {
               <motion.div
                 initial={{y: -10, opacity: 0}}
                 animate={{y: 0, opacity: 1}}
-                transition={{delay: 1.2, duration: .5, type: 'tween'}}
+                transition={{delay: .8, duration: .5, type: 'tween'}}
               >
                 <Navbar/>
               </motion.div>
@@ -94,7 +107,7 @@ const LayoutWrap = observer(({children}: LayoutNavbarProps) => {
               <motion.div
                 initial={{y: 10, opacity: 0}}
                 animate={{y: 0, opacity: 1}}
-                transition={{delay: 1.2, duration: .5, type: 'tween'}}
+                transition={{delay: .8, duration: .5, type: 'tween'}}
               >
                 <Footer/>
               </motion.div>

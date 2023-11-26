@@ -1,9 +1,10 @@
+'use client'
 import {signal} from "signals-react-safe";
-import {GAMES_CONFIG, GamesConfigItem} from "../../games.config";
+import {AppCategories, AppCategory, LibraryApp} from "../../games.config";
 import {makeAutoObservable, makeObservable, observable} from "mobx";
 
 class SteamStore {
-  loggedIn = false;
+  loggedIn = typeof window !== 'undefined' ? +localStorage.getItem('authorized') > 0 : false;
 
   constructor() {
     makeAutoObservable(this);
@@ -11,14 +12,11 @@ class SteamStore {
 }
 
 class GameLibraryStore {
-  selectedGame? = GAMES_CONFIG[0];
-  launchedGame?: GamesConfigItem = null;
+  selectedApp?: LibraryApp | AppCategory = AppCategories[0];
+  launchedApp?: LibraryApp = null;
 
   constructor() {
-    makeObservable(this, {
-      selectedGame: observable,
-      launchedGame: observable
-    });
+    makeAutoObservable(this);
   }
 }
 
